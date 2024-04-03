@@ -3,26 +3,22 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World! Site Title</title>
+    <title>Idle Wizard Calculator</title>
   </head>
   
+
+  <script type="text/javascript" src="Dependencies/pako.js"></script>
+  <script type="text/javascript" src="save.js"></script>
   <script type="text/javascript" src="calc.js"></script>
-
   <body>
-    <h1>Hello World!</h1>
+    <h1>Idle Wizard Calculator</h1>
 	
-	<h3>A demonstration of how to access a Text Field</h3>
+	<h3>Gets the total number of memories from an Idle Wizard Save</h3>
 
-<input type="text" id="myText" value="Some text...">
+<input type="text" id="exportText" value="">
 
-<p>Click the "Try it" button to get the text in the text field.</p>
-
-<button onclick="myFunction()">Try it</button>
+<button onclick="getTotalMemories()">Get Memory Count</button>
   </body>
   
-<p id="demo">Output: </p>
-
-
-
-  
+<p>Output: <span id="totalMemoryCount"/></p>
 </html>
