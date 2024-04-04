@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Evocation",
+        "sourceCostBase": 1000000000000,
+        "sourceCostGrowth": 1.23,
+        "memeCostBase": 7,
+        "memeCostGrowth": 1.25,
+        "effectBase": 1.15,
+        "effectStep": 1000
+    },
+    {
+        "name": "Incantation",
+        "sourceCostBase": 100000000000000,
+        "sourceCostGrowth": 1.35,
+        "memeCostBase": 10,
+        "memeCostGrowth": 1.27,
+        "effectBase": 1.07,
+        "effectStep": 1000
+    },
+    {
+        "name": "Summoning",
+        "sourceCostBase": 100000000000000,
+        "sourceCostGrowth": 1.35,
+        "memeCostBase": 10,
+        "memeCostGrowth": 1.27,
+        "effectBase": 1.07,
+        "effectStep": 1000
+    },
+    {
+        "name": "Autoclick",
+        "sourceCostBase": 1000000000,
+        "sourceCostGrowth": 1.19,
+        "memeCostBase": 5,
+        "memeCostGrowth": 1.25,
+        "effectBase": 1.14,
+        "effectStep": 1000
+    },
+    {
+        "name": "Character Ability Power",
+        "sourceCostBase": 10000000000,
+        "sourceCostGrowth": 1.21,
+        "memeCostBase": 6,
+        "memeCostGrowth": 1.25,
+        "effectBase": 1.15,
+        "effectStep": 1000
+    },
+    {
+        "name": "Pet Ability Power",
+        "sourceCostBase": 10000000000,
+        "sourceCostGrowth": 1.2,
+        "memeCostBase": 6,
+        "memeCostGrowth": 1.25,
+        "effectBase": 1.15,
+        "effectStep": 1000
+    },
+    {
+        "name": "Character Experience",
+        "sourceCostBase": 1000000000000000,
+        "sourceCostGrowth": 1.31,
+        "memeCostBase": 8,
+        "memeCostGrowth": 1.35,
+        "effectBase": 1.05,
+        "effectStep": 1200
+    }
+]
