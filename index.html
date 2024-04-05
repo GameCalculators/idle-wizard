@@ -3,22 +3,213 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Resources/CalculatorStyle.css">
     <title>Idle Wizard Calculator</title>
   </head>
   
-
   <script type="text/javascript" src="Dependencies/pako.js"></script>
   <script type="text/javascript" src="save.js"></script>
   <script type="text/javascript" src="calc.js"></script>
+
   <body>
     <h1>Idle Wizard Calculator</h1>
-	
-    <h3>Gets the total number of memories from an Idle Wizard Save</h3>
 
-    <input type="text" id="exportText" value="">
+    <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'Stats')">Current Stats</button>
+      <button class="tablinks" onclick="openTab(event, 'SourceMemes')" id="defaultOpen">Source Memetics</button>
+      <button class="tablinks helpbutton" onclick="openTab(event, 'Help')">Help</button>
+    </div>
 
-    <button onclick="getTotalMemories()">Get Memory Count</button>
+    <div id="Stats" class="tabcontent">
+      <h3>Gets the total number of memories from an Idle Wizard Save</h3>
 
-    <p>Output: <span id="totalMemoryCount"/></p>
+      <input type="text" id="exportText" value="">
+  
+      <button onclick="getTotalMemories()">Get Memory Count</button>
+  
+      <p>Output: <span id="totalMemoryCount"/></p>
+    </div>
+
+    <div id="Help" class="tabcontent">
+      <h3>How to use the Calculator</h3>
+    </div>
+
+    <div id="SourceMemes" class="tabcontent">
+      <div>
+        <table id="sourceMemesLayoutTable">
+          <td>
+            <table id="sourceMemesData">
+              <tr><td><h3>Character Stats</h3></td></tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceNumIngots">Available Ingots</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceNumIngots" value="0" min="0" step="1"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceLogMana">Total Mana (Log)</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceLogMana" value="0" min="0" step="1"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceCataSources">Sources from Catalysts</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceCataSources" value="0" min="0" step="1"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceCharacterClass">Class</label></td>
+                <td>
+                  <select class="useroverrideinput" id="sourceCharacterClass">
+                    
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceProfitSource">Profit Source</label></td>
+                <td>
+                  <select class="useroverrideinput" id="sourceProfitSource">
+                    
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceForceManaGemIncant">Force Incantation on Mana Gems?</label></td>
+                <td><input class="useroverrideinput" type="checkbox" id="sourceForceManaGemIncant" value="0"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceSpellMastery">Spell Mastery</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceSpellMastery" value="0" min="0" step="1"></td>
+              </tr>
+              <tr><td><h3>Stat Scaling</h3></td></tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceIncantationScaling">Incantation</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceIncantationScaling" value="0" min="0" step="any"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceCapScaling">Character Ability Power</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceCapScaling" value="0"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceAutoclickScaling">Autoclick</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceAutoclickScaling" value="0"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceEvocationScaling">Evocation</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceEvocationScaling" value="0"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceSummoningScaling">Summoning</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceSummoningScaling" value="0"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourcePapScaling">Pet Ability Power</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourcePapScaling" value="0"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceCexpScaling">Character Experience</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceCexpScaling" value="0"></td>
+              </tr>
+              <tr><td><h3>Additional Source Scaling</h3></td></tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceGemScaling">Mana Gem</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceGemScaling" value="0" min="0" step="any"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceGrimoireScaling">Grimoire</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceGrimoireScaling" value="0"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceFountainScaling">Spell Fountain</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceFountainScaling" value="0"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceTreeScaling">Enchanted Tree</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceTreeScaling" value="0"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceDeskScaling">Alchemy Desk</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceDeskScaling" value="0"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceCircleScaling">Circle of Power</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceCircleScaling" value="0"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceRiftScaling">Dimensional Rift</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceRiftScaling" value="0"></td>
+              </tr>
+              <tr>
+                <td><label class="useroverridelabel" for="sourceNexusScaling">Nexus</label></td>
+                <td><input class="useroverrideinput" type="number" id="sourceNexusScaling" value="0"></td>
+              </tr>
+            </table>     
+          </td>
+          <td>
+            <table id="sourceMemesResults">
+              <tr><td><h3>Results</h3></td></tr>
+              <tr>
+                <th >Memetic Name</th>
+                <th>Source Name</th>
+                <th>Recommended Level</th>
+              </tr>
+              <tr>
+                <td><label>Production Source (Ingot)</label></td>
+                <td class="sourcememesresult"><label id="sourceProductionAssignment">-</label></td>
+                <td class="sourcememesresult"><label id="sourceProductionLevel">-</label></td>
+              </tr>
+              <tr>
+                <td><label>Incantation Efficiency Source</label></td>
+                <td class="sourcememesresult"><label id="sourceIncantationAssignment">-</label></td>
+                <td class="sourcememesresult"><label id="sourceIncantationLevel">-</label></td>
+              </tr>
+              <tr>
+                <td><label>Character Ability Power Source</label></td>
+                <td class="sourcememesresult"><label id="sourceCapAssignment">-</label></td>
+                <td class="sourcememesresult"><label id="sourceCapLevel">-</label></td>
+              </tr>
+              <tr>
+                <td><label>Autoclick Profit Source</label></td>
+                <td class="sourcememesresult"><label id="sourceAutoclickAssignment">-</label></td>
+                <td class="sourcememesresult"><label id="sourceAutoclickLevel">-</label></td>
+              </tr>
+              <tr>
+                <td><label>Evocation Efficiency Source</label></td>
+                <td class="sourcememesresult"><label id="sourceEvocationAssignment">-</label></td>
+                <td class="sourcememesresult"><label id="sourceEvocationLevel">-</label></td>
+              </tr>
+              <tr>
+                <td><label>Summoning Efficiency Source</label></td>
+                <td class="sourcememesresult"><label id="sourceSummoningAssignment">-</label></td>
+                <td class="sourcememesresult"><label id="sourceSummoningLevel">-</label></td>
+              </tr>
+              <tr>
+                <td><label>Pet Ability Power Source</label></td>
+                <td class="sourcememesresult"><label id="sourcePapAssignment">-</label></td>
+                <td class="sourcememesresult"><label id="sourcePapLevel">-</label></td>
+              </tr>
+              <tr>
+                <td><label>Character Experience Source</label></td>
+                <td class="sourcememesresult"><label id="sourceCexpAssignment">-</label></td>
+                <td class="sourcememesresult"><label id="sourceCexpLevel">-</label></td>
+              </tr>
+            </table>
+          </td>
+        </table> 
+      </div>
+    </div>
+
+    <script>
+      function openTab(evt, tabId) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabId).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+      // Get the element with id="defaultOpen" and click on it
+      document.getElementById("defaultOpen").click();
+    </script>
   </body>
 </html>
