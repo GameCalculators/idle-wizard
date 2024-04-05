@@ -9,7 +9,7 @@
 .tab button {
     background-color: inherit;
     float: left;
-    border: 1px solid #ccc;
+    border: 0px;
     outline: none;
     cursor: pointer;
     padding: 14px 16px;
@@ -27,16 +27,9 @@
     background-color: #ccc;
 }
 
-.helpbutton {
-    clear: left;
-    background-color: inherit;
-    float: left;
-    border: 1px solid #ccc;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
+.tab .helpbutton {
+
+    float: right;
 }
   
 /* Style the tab content */

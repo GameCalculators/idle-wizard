@@ -15,12 +15,13 @@
     <h1>Idle Wizard Calculator</h1>
 
     <div class="tab">
+      <button class="tablinks" onclick="openTab(event, 'MemoriesFromSave')" id="defaultOpen">Memories from Save</button>
       <button class="tablinks" onclick="openTab(event, 'Stats')">Current Stats</button>
-      <button class="tablinks" onclick="openTab(event, 'SourceMemes')" id="defaultOpen">Source Memetics</button>
+      <button class="tablinks" onclick="openTab(event, 'SourceMemes')">Source Memetics</button>
       <button class="tablinks helpbutton" onclick="openTab(event, 'Help')">Help</button>
     </div>
 
-    <div id="Stats" class="tabcontent">
+    <div id="MemoriesFromSave" class="tabcontent">
       <h3>Gets the total number of memories from an Idle Wizard Save</h3>
 
       <input type="text" id="exportText" value="">
@@ -28,6 +29,10 @@
       <button onclick="getTotalMemories()">Get Memory Count</button>
   
       <p>Output: <span id="totalMemoryCount"/></p>
+    </div>
+
+    <div id="Stats" class="tabcontent">
+      <h3>Current Stats for the Player, either from manual entry or save import</h3>
     </div>
 
     <div id="Help" class="tabcontent">
